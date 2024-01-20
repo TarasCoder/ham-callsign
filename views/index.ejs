@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Please enter a ham operator callsign:</h2>
+      <form class="main_form" action="/checking" method="post">
+        <input type="text" placeholder="Enter callsign" name="callsign" />
+        <button class="btn">Check!</button>
+      </form>
+      <% if(isRequest) { %>
+        <% if (error) { %>
+          <p>Error: <%= error %></p>
+        <% } else { %>
+          <ul class="results">
+            <li><%= callsign %></li>
+            <li><%= name %></li>
+            <li><%= address1 %></li>
+            <li><%= address2 %></li>
+          </ul>
+        <% } %>
+      <% } %>
+    </div>
+  </body>
+</html>
